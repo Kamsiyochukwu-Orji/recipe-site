@@ -1,0 +1,381 @@
+/* ============================================================
+   RECIPLY — RESPONSIVE MEDIA QUERIES
+   Breakpoints:
+     xl:  1280px and below  (large laptops)
+     lg:  1024px and below  (small laptops / landscape tablets)
+     md:   768px and below  (tablets / large phones)
+     sm:   480px and below  (phones)
+     xs:   360px and below  (small phones)
+   ============================================================ */
+
+
+/* ── LARGE LAPTOPS (≤ 1280px) ──────────────────────────── */
+@media (max-width: 1280px) {
+  .page {
+    padding: 2rem 2rem;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+
+/* ── SMALL LAPTOPS / LANDSCAPE TABLETS (≤ 1024px) ─────── */
+@media (max-width: 1024px) {
+  /* Navbar */
+  .navbar {
+    padding: 0 1.25rem;
+  }
+
+  /* Recipe detail two-column → stacked */
+  .detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-body {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  /* Grids tighten up */
+  .grid-4 {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 16px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+
+/* ── TABLETS / LARGE PHONES (≤ 768px) ──────────────────── */
+@media (max-width: 768px) {
+  /* Global */
+  .page {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  /* Navbar — hide links, keep brand + search */
+  .navbar {
+    padding: 0 1rem;
+    height: 56px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .search-bar button {
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  /* Category chips — scroll horizontally */
+  .cat-strip {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .cat-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-chip {
+    flex-shrink: 0;
+  }
+
+  /* Grids */
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Recipe detail */
+  .detail-hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .detail-body {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .detail-skeleton {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-title {
+    font-size: 1.5rem;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detail-actions a {
+    text-align: center;
+  }
+
+  /* Ingredients panel full width */
+  .ingredients-panel,
+  .instructions-panel {
+    width: 100%;
+  }
+
+  /* Categories page */
+  .cat-name {
+    font-size: 15px;
+  }
+
+  .cat-desc {
+    font-size: 12px;
+  }
+}
+
+
+/* ── PHONES (≤ 480px) ───────────────────────────────────── */
+@media (max-width: 480px) {
+  /* Global */
+  .page {
+    padding: 1.25rem 0.875rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    height: 52px;
+    padding: 0 0.875rem;
+  }
+
+  .brand-name {
+    font-size: 17px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2rem 0.875rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .search-bar input {
+    width: 100%;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .search-bar button {
+    padding: 12px;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  /* Grids → single column */
+  .grid-4,
+  .grid-3,
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Recipe cards horizontal on phone */
+  .grid-4 a,
+  .grid-3 a {
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+  }
+
+  .card-img-wrap {
+    width: 110px;
+    min-width: 110px;
+    aspect-ratio: auto;
+    height: 100%;
+    border-radius: var(--radius) 0 0 var(--radius);
+  }
+
+  .card-body {
+    padding: 10px 12px;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-size: 13px;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Detail pages */
+  .detail-title {
+    font-size: 1.3rem;
+  }
+
+  .detail-img {
+    border-radius: 12px;
+  }
+
+  .detail-main {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .result-value {
+    font-size: 20px;
+  }
+
+  .ingredients-list li {
+    font-size: 13px;
+  }
+
+  .step {
+    font-size: 13px;
+  }
+
+  /* Category tiles */
+  .cat-img-wrap {
+    aspect-ratio: 16/7;
+  }
+
+  /* Buttons full width on mobile */
+  .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1.25rem 1rem;
+    font-size: 12px;
+  }
+}
+
+
+/* ── SMALL PHONES (≤ 360px) ─────────────────────────────── */
+@media (max-width: 360px) {
+  .page {
+    padding: 1rem 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem !important;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+
+  .detail-title {
+    font-size: 1.1rem;
+  }
+
+  .size-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+
+/* ── LANDSCAPE PHONES ───────────────────────────────────── */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ── LARGE SCREENS / TV (≥ 1440px) ─────────────────────── */
+@media (min-width: 1440px) {
+  .page {
+    max-width: 1320px;
+    padding: 3rem 2rem;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .hero-title {
+    font-size: 3.5rem !important;
+  }
+}
