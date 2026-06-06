@@ -20,7 +20,7 @@ npm run build
 npm run preview
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [https://recipe-site-ltem.vercel.app/](https://recipe-site-ltem.vercel.app/) in your browser.
 
 ---
 
@@ -57,12 +57,12 @@ recipe-app/
 
 ## 📄 Pages & Routing
 
-| Route | Component | Description |
-|---|---|---|
-| `/` | `Home.vue` | Hero search bar, random daily picks, category chips |
-| `/categories` | `Categories.vue` | Full grid of all cuisine categories |
-| `/categories/:name` | `CategoryDetail.vue` | All recipes within a selected category |
-| `/recipe/:id` | `RecipeDetail.vue` | Full recipe with ingredients and instructions |
+| Route               | Component            | Description                                         |
+| ------------------- | -------------------- | --------------------------------------------------- |
+| `/`                 | `Home.vue`           | Hero search bar, random daily picks, category chips |
+| `/categories`       | `Categories.vue`     | Full grid of all cuisine categories                 |
+| `/categories/:name` | `CategoryDetail.vue` | All recipes within a selected category              |
+| `/recipe/:id`       | `RecipeDetail.vue`   | Full recipe with ingredients and instructions       |
 
 ---
 
@@ -70,13 +70,13 @@ recipe-app/
 
 Uses the **[TheMealDB API](https://www.themealdb.com/api.php)** — completely free with no API key required.
 
-| Function | Endpoint | Description |
-|---|---|---|
-| `searchRecipes(query)` | `/search.php?s=` | Search recipes by name |
-| `getRecipeById(id)` | `/lookup.php?i=` | Fetch a single recipe |
-| `getCategories()` | `/categories.php` | Fetch all cuisine categories |
-| `getByCategory(name)` | `/filter.php?c=` | Fetch recipes by category |
-| `getRandomRecipes(n)` | `/random.php` | Fetch n random recipes |
+| Function               | Endpoint          | Description                  |
+| ---------------------- | ----------------- | ---------------------------- |
+| `searchRecipes(query)` | `/search.php?s=`  | Search recipes by name       |
+| `getRecipeById(id)`    | `/lookup.php?i=`  | Fetch a single recipe        |
+| `getCategories()`      | `/categories.php` | Fetch all cuisine categories |
+| `getByCategory(name)`  | `/filter.php?c=`  | Fetch recipes by category    |
+| `getRandomRecipes(n)`  | `/random.php`     | Fetch n random recipes       |
 
 All API logic lives in `src/composables/useApi.ts`.
 
@@ -95,12 +95,12 @@ All API logic lives in `src/composables/useApi.ts`.
 
 ## 🛠 Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| Vue 3 | UI framework (Composition API) |
-| TypeScript | Type safety |
-| Vue Router 4 | Client-side routing |
-| Vite | Build tool & dev server |
+| Tool         | Purpose                         |
+| ------------ | ------------------------------- |
+| Vue 3        | UI framework (Composition API)  |
+| TypeScript   | Type safety                     |
+| Vue Router 4 | Client-side routing             |
+| Vite         | Build tool & dev server         |
 | Google Fonts | Typography (Fraunces + DM Sans) |
 
 ---
